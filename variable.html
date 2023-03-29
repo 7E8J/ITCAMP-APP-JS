@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <title>Baisc Javascript ES6</title>
+</head>
+<body>
+  <div class="navbar is-light p-5" style="padding:10px">
+    <b class="mr-4">Javascript ES6</b>
+    <a href="" class="ms-4">Variables and data types,</a>
+    <a href="/operators.html" class="ms-4">Operators,</a>
+    <a href="/control_structures.html" class="ms-4">Control structures (if/else statements, loops),</a>
+    <a href="/function.html" class="ms-4">Functions,</a>
+    <a href="/array.html" class="ms-4">Arrays & Objects,</a>
+    <a href="/dom.html" class="ms-4">DOM manipulation</a>
+</div>
+<section>
+    <div style="margin-left: 50px; margin-top: 20px; padding-bottom: 100px; padding-right: 100px;">
+            <h2>1. Variable and data types</h2>
+            <h3>Variable var, let, const</h3>
+            <p>
+                Example:
+            </p>
+    <pre class="prettyprint linenums lang-java">
+      var x = 5;
+      var y = 6;
+      var z = x + y;
+      //result z = 11
+
+      let x = 5;
+      let y = 6;
+      let z = x + y;
+      //result z = 11
+
+      const price1 = 5;
+      const price2 = 7;
+      const total = price1 + price2;
+      total = 11111
+      //result TypeError: Assignment to constant variable.
+    </pre>
+            <p>
+                <div id="result1"></div>
+            </p>
+            <button onclick="v_ex1()">CLICK to see the result</button>
+            <p><br>tip: When to Use JavaScript var?
+              Always declare JavaScript variables with var,let, orconst.
+              
+              The var keyword is used in all JavaScript code from 1995 to 2015.
+              
+              The let and const keywords were added to JavaScript in 2015.
+              
+              If you want your code to run in older browsers, you must use var.</p>
+            <hr>
+            <h3>Blockscope</h3>
+            <p>
+                Example:
+            </p>
+    <pre class="prettyprint linenums lang-java">
+      var x = 10
+      if(x == 10){
+        var y = x
+        console.log("y in " + y)
+      }
+      console.log("y out " + y)
+    </pre>
+            <p>
+                <div id="result2"></div>
+            </p>
+            <button onclick="bc_ex1()">CLICK to see the result</button>
+            <p>
+              <br>Example 2:
+            </p>
+    <pre class="prettyprint linenums lang-java">
+      var x = 10
+      if(x == 10){
+        let y = x
+        console.log("y in " + y)
+      }
+      console.log("y out " + y)
+    </pre>
+              <p>
+                  <div id="result2"></div>
+              </p>
+              <button onclick="bc_ex2()">CLICK to see the result</button>
+              <p>
+                <br>Example 3:
+              </p>
+    <pre class="prettyprint linenums lang-java">
+      let x = 10
+      if(x == 10){
+        let x = 11
+        console.log("x in " + x)
+      }
+      console.log("x out " + x)
+    </pre>
+              <p>
+                  <div id="result2"></div>
+              </p>
+              <button onclick="bc_ex3()">CLICK to see the result</button>
+              <hr>
+              <h3>Data type </h3>
+              <p>
+                includes Number, String, Booleans, Object, Array, Date
+              </p>
+              <p>
+                <br>Example :
+              </p>
+    <pre class="prettyprint linenums lang-java">
+      // Numbers:
+      let length = 16;
+      let weight = 7.5;
+
+      // Strings:
+      let color = "Yellow";
+      let lastName = "Johnson";
+
+      // Booleans
+      let x = true;
+      let y = false;
+
+      // Object:
+      const person = {firstName:"John", lastName:"Doe"};
+
+      // Array object:
+      const cars = ["Saab", "Volvo", "BMW"];
+
+      // Date object:
+      const date = new Date("2022-03-25");
+    </pre>
+              <hr>
+              <h3>String</h3>
+              <p>
+              </p>
+              <p>
+                <br>Example :
+              </p>
+    <pre class="prettyprint linenums lang-java">
+      let hello = "hello world"
+      //result "hello world"
+
+      let helloplus = "hello" + "world"
+      //result "hello world"
+
+      let age_p_poom = "age " + 20
+      //result "age 20"
+    </pre>
+              <h3>String MultiLine String</h3>
+              <p>
+                ``` แปะไว้ให้เพื่อกดไม่เป็น
+              </p>
+              <p>
+                <br>Example :
+              </p>
+    <pre class="prettyprint linenums lang-java">
+      //Bad declare
+      let customer = "ชื่อลูกค้า เด็กชายโจโจ้
+      ที่อยู่ 555/100 ถนนเฮฮา อำเภอเมือง จังหวัดเรียนดี
+      เบอร์ติดต่อ : 012-345-6789"
+
+      //MultiLine String
+      let customer = `ชื่อลูกค้า เด็กชายโจโจ้
+      ที่อยู่ 555/100 ถนนเฮฮา อำเภอเมือง จังหวัดเรียนดี
+      เบอร์ติดต่อ : 012-345-6789`
+    </pre>
+              <h3>String Interpolation</h3>
+              <p>
+                ``` แปะไว้ให้เพื่อกดไม่เป็น
+              </p>
+              <p>
+                <br>Example :
+              </p>
+    <pre class="prettyprint linenums lang-java">
+      let KMITL = {
+        address: "1 Chalong Krung 1 Alley, Lat Krabang, Bangkok 10520",
+        phone: "02 329 8000",
+        rector: "Suchatchavee Suwansawas",
+        founded: "1960",
+        colors: "White, Orange",
+        founder: "Liam Bunnag",
+        school_types: "Public university, Public school"
+      }
+
+      let address = `Address: ${KMITL.address}
+        Phone: ${KMITL.phone}
+        Rector: ${KMITL.rector}
+        Founded: ${KMITL.founded}
+        Colors: ${KMITL.colors}
+        Founder: ${KMITL.founder}
+        School ${KMITL.school_types}`
+
+      //output
+      // Address: 1 Chalong Krung 1 Alley, Lat Krabang, Bangkok 10520
+      // Phone: 02 329 8000
+      // Rector: Suchatchavee Suwansawas
+      // Founded: 1960
+      // Colors: White, Orange
+      // Founder: Liam Bunnag
+      // School Public university, Public school
+    </pre>
+    </div>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script>
+    function v_ex1(){
+      try{
+        const price1 = 5;
+        const price2 = 7;
+        const total = price1 + price2;
+        total = 11111
+
+      } catch(err){
+        document.getElementById('result1').innerHTML = err
+      }
+
+      document.getElementById('result1').innerHTML = 'Total: ' + sum.toString()
+    }
+
+    function bc_ex1(){
+      var x = 10
+      if(x == 10){
+        var y = x
+        console.log("y in " + y)
+      }
+      console.log("y out " + y)
+    }
+
+    function bc_ex2(){
+      var x = 10
+      if(x == 10){
+        let y = x
+        console.log("y in " + y)
+      }
+      console.log("y out " + y)
+    }
+
+    function bc_ex3(){
+      let x = 10
+      if(x == 10){
+        let x = 11
+        console.log("x in " + x)
+      }
+      console.log("x out " + x)
+    }
+    
+    function dt_ex1() {
+      // Numbers:
+      let length = 16;
+      let weight = 7.5;
+
+      // Strings:
+      let color = "Yellow";
+      let lastName = "Johnson";
+
+      // Booleans
+      let x = true;
+      let y = false;
+
+      // Object:
+      const person = {firstName:"John", lastName:"Doe"};
+
+      // Array object:
+      const cars = ["Saab", "Volvo", "BMW"];
+
+      // Date object:
+      const date = new Date("2022-03-25");
+    }
+
+    function s_ex1(){
+      let hello = "hello world"
+
+      let helloplus = "hello" + "world"
+
+      let age = "age " + 20
+
+      let customer = `ชื่อลูกค้า เด็กชายโจโจ้
+      ที่อยู่ 555/100 ถนนเฮฮา อำเภอเมือง จังหวัดเรียนดี
+      เบอร์ติดต่อ : 012-345-6789`
+
+
+      let KMITL = {
+        address: "1 Chalong Krung 1 Alley, Lat Krabang, Bangkok 10520",
+        phone: "02 329 8000",
+        rector: "Suchatchavee Suwansawas",
+        founded: "1960",
+        colors: "White, Orange",
+        founder: "Liam Bunnag",
+        school_types: "Public university, Public school"
+      }
+
+      let address = `Address: ${KMITL.address}
+      Phone: ${KMITL.phone}
+      Rector: ${KMITL.rector}
+      Founded: ${KMITL.founded}
+      Colors: ${KMITL.colors}
+      Founder: ${KMITL.founder}
+      School ${KMITL.school_types}`
+    }
+
+
+    // let ta = [
+    //     {name: 'Neung', age: 20}, 
+    //     {name: 'Dew', age: 48},
+    //     {name: 'Jack', age: 18},
+    //     {name: 'Wan', age: 30},
+    // ]
+
+    // console.log(ta.filter((value) => {return value.age >= 30}))
+
+
+    // let data = [5, 10, 15]
+    // let result = data.map(function (value){ return value*2})
+    // result.splice(0, 2, 20 ,25, 30)
+    // console.log(result)
+
+
+    // let data = [5, 10, 15]
+    // let result = data.filter(function(value){
+    //     return value >= 10
+    // }).map(function(value){
+    //     return value + 5
+    // })
+    // console.log(result)
+
+
+</script>
+
+<script> 
+    // let button = document.getElementById("btn");
+    // function once() { 
+    //     console.log("Done."); 
+    //     button.removeEventListener("click", once); 
+    // } 
+    // button.addEventListener("click", once); 
+    // console.log("Goodbye!"); 
+</script>
+
+
+</body>
+</html>

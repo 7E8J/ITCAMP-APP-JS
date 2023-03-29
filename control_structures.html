@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <title>Baisc Javascript ES6</title>
+</head>
+<body>
+  <div class="navbar is-light p-5" style="padding:10px">
+    <b class="mr-4">Javascript ES6</b>
+    <a href="/variable.html" class="ms-4">Variables and data types,</a>
+    <a href="/operators.html" class="ms-4">Operators,</a>
+    <a href="" class="ms-4">Control structures (if/else statements, loops),</a>
+    <a href="/function.html" class="ms-4">Functions,</a>
+    <a href="/array.html" class="ms-4">Arrays & Objects,</a>
+    <a href="/dom.html" class="ms-4">DOM manipulation</a>
+</div>
+<section>
+    <div style="margin-left: 50px; margin-top: 20px; padding-bottom: 100px; padding-right: 100px;">
+      <h2>3. Control structures (if/else statements, loops)</h2>
+      <p>ref:
+        <a href="https://en.wikibooks.org/wiki/JavaScript/Control_structures">https://en.wikibooks.org/wiki/JavaScript/Control_structures</a>
+      </p>
+      <h3>if / else</h3>
+<pre class="prettyprint linenums lang-java">
+if ( condition ) {
+  // block of statements
+} else {
+  // block of statements
+}
+</pre>
+      <p>Example: </p>
+<pre class="prettyprint linenums lang-java">
+const a = 3;
+const b = "3";
+if (a == b) {
+  alert("The two variables contains the same value, but may have different data types.");
+} else {
+  alert("The two variables contain different values.");
+}
+
+// an example without 'else'
+const c = 6 / 2;
+if (a === c) {
+  alert("The two variables contains the same value and are of the same data type.");
+}
+</pre>
+      <button onclick="c_ex1()">CLICK to see the result</button>
+      
+      <p><br>Example 2: </p>
+<pre class="prettyprint linenums lang-java">
+// same as above; but this abbreviated syntax is not recommended.
+
+const a = 3;
+const b = "3";
+
+if (a == b) alert("The two variables contains the same value, but may have different data types.");
+else alert("The two variables contain different values.");
+
+const c = 6 / 2;
+if (a === c) alert("The two variables contains the same value and are of the same data type.");
+</pre>
+      <button onclick="c_ex2()">CLICK to see the result</button>
+      <hr>
+      <h3>Switch</h3>
+<pre class="prettyprint linenums lang-java">
+switch (variable) {
+  case "A":
+    // code
+    break;
+  case "B":
+    // code
+    break;
+  default:   // analog to 'else' without any further 'if'
+    // code
+    break;
+}
+</pre>
+      <p>Example: </p>
+<pre class="prettyprint linenums lang-java">
+let x = 1;
+
+switch (x) {
+  case 0:
+    alert("Off")
+    break;
+  case 1:
+    alert("On")
+    break;
+  default:
+    alert("Error")
+    break
+}
+</pre>
+      <button onclick="c_ex3()">CLICK to see the result</button>
+      <hr>
+      <h3>Loop For</h3>
+      <p>Instead of writing:</p>
+<pre class="prettyprint linenums lang-java">
+Helloworld0
+Helloworld1
+Helloworld2
+Helloworld3
+Helloworld4
+Helloworld5
+Helloworld6
+Helloworld7
+Helloworld8
+Helloworld9
+</pre>
+      <p>Just write:</p>
+<pre class="prettyprint linenums lang-java">
+for (let i = 0; i < 10; i++) {
+  console.log("Helloworl" + i)
+}
+</pre>
+      <button onclick="f_ex1()">CLICK to see the result</button>
+      <hr>
+      <h3>Loop For In</h3>
+      <p>Instead of writing:</p>
+<pre class="prettyprint linenums lang-java">
+for (key in object) {
+  // code block to be executed
+}
+</pre>
+      <p>Just write:</p>
+<pre class="prettyprint linenums lang-java">
+const person = {fname:"John", lname:"Doe", age:25};
+
+let text = "";
+for (let x in person) {
+  text += person[x];
+}
+console.log(text)
+</pre>
+<button onclick="f_ex2()">CLICK to see the result</button>
+        <hr>
+        <h3>Loop ForEach</h3>
+<pre class="prettyprint linenums lang-java">
+const numbers = [45, 4, 9, 16, 25];
+
+let txt = "";
+numbers.forEach((value, index) => {
+  txt += value;
+});
+
+console.log(txt)
+</pre>
+          <button onclick="f_ex3()">CLICK to see the result</button>
+          <hr>
+          <h3>Loop While</h3>
+<pre class="prettyprint linenums lang-java">
+  //#1
+  while (condition) {
+    // code block to be executed
+  }
+
+  //#2
+  do {
+    // code block to be executed
+  }
+  while (condition);
+</pre>
+  </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script>
+  function c_ex1() {
+    const a = 3;
+    const b = "3";
+    if (a == b) {
+      alert("The two variables contains the same value, but may have different data types.");
+    } else {
+      alert("The two variables contain different values.");
+    }
+    
+    // an example without 'else'
+    // const c = 6 / 2;
+    // if (a === c) {
+    //   alert("The two variables contains the same value and are of the same data type.");
+    // }
+  }
+
+  function c_ex2() {
+    // same as above; but this abbreviated syntax is not recommended.
+
+    const a = 3;
+    const b = "3";
+
+    if (a == b) alert("The two variables contains the same value, but may have different data types.");
+    else alert("The two variables contain different values.");
+
+    // const c = 6 / 2;
+    // if (a === c) alert("The two variables contains the same value and are of the same data type.");
+  }
+
+  function c_ex3() {
+    let x = 1;
+
+    switch (x) {
+      case 0:
+        alert("Off")
+        break;
+      case 1:
+        alert("On")
+        break;
+      default:
+        alert("Error")
+        break
+    }
+  }
+
+  function f_ex1() {
+    for (let i = 0; i < 10; i++) {
+      console.log("Helloworl" + i)
+    }
+  }
+
+  function f_ex2() {
+    const person = {fname:"John", lname:"Doe", age:25};
+ 
+    let text = "";
+    for (let x in person) {
+      text += person[x];
+    }
+    console.log(text)
+  }
+  
+  function f_ex3(){
+    const numbers = [45, 4, 9, 16, 25];
+
+    let txt = "";
+    numbers.forEach((value, index) => {
+      txt += value;
+    });
+
+    console.log(txt)
+  }
+</script>
+
+
+</body>
+</html>
