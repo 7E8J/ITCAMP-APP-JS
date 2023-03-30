@@ -19,8 +19,89 @@
 <section>
     <div style="margin-left: 50px; margin-top: 20px; padding-bottom: 100px; padding-right: 100px;">
       <h2>4. Functions</h2>
-     
-  </div>
+      <h3>Function declarations</h3>
+  <pre class="prettyprint linenums lang-java">
+    function name(parameter1, parameter2){
+      //code
+    }
+  </pre>
+    <p>Example:</p>
+  <pre class="prettyprint linenums lang-java">
+    let x = myFunction(4, 3);   // Function is called, return value will end up in x
+
+    function myFunction(a, b) {
+      return a * b;             // Function returns the product of a and b
+    }
+  </pre>
+      <h3><br>Function Scope</h3>
+  <pre class="prettyprint linenums lang-java">
+    // code here can NOT use carName
+
+    function myFunction() {
+      let carName = "Volvo";
+      // code here CAN use carName
+    }
+
+    // code here can NOT use carName
+  </pre>
+    <p>Example:</p>
+  <pre class="prettyprint linenums lang-java">
+    // The following variables are defined in the global scope
+    const num1 = 20;
+    const num2 = 3;
+    const name = "Chamakh";
+
+    // This function is defined in the global scope
+    function multiply() {
+      return num1 * num2;
+    }
+
+    multiply(); // Returns 60
+
+    // A nested function example
+    function getScore() {
+      const num1 = 2;
+      const num2 = 3;
+
+      function add() {
+        return `${name} scored ${num1 + num2}`;
+      }
+
+      return add();
+    }
+
+    getScore(); // Returns "Chamakh scored 5"
+  </pre>
+    <p>ref: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#defining_functions">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#defining_functions</a></p>
+    <hr>
+    <h3>Arrow Function ES6</h3>
+    <p>Shorter fucntions</p>
+  <pre class="prettyprint linenums lang-java">
+    //Before Arrow
+    hello = function() {
+      return "Hello World!";
+    }
+
+    //With Arrow Function
+    hello = () => {
+      return "Hello World"
+    }
+  </pre>
+    <p>Example:</p>
+  <pre class="prettyprint linenums lang-java">
+    const a = ["Hydrogen", "Helium", "Lithium", "Beryllium"];
+
+    const a2 = a.map(function (s) {
+      return s.length;
+    });
+
+    console.log(a2); // [8, 6, 7, 9]
+
+    const a3 = a.map((s) => s.length);
+
+    console.log(a3); // [8, 6, 7, 9]
+  </pre>
+    </div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
