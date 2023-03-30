@@ -19,9 +19,149 @@
 <section>
     <div style="margin-left: 50px; margin-top: 20px; padding-bottom: 100px; padding-right: 100px;">
       <h2>5. DOM manipulation</h2>
-     
-  </div>
+      <h4>THE HTML DOM</h4>
+      <ul>
+        <li>With the HTML DOM, JavaScript can
+          access and change all the elements of an
+          HTML document.</li>
+        <li>When a web page is loaded, the browser
+          creates a Document Object Model of
+          the page.</li>
+        <li>The HTML DOM model is constructed
+          as a tree of Objects:</li>
+      </ul>
+      <img src="/assets/dom1.png" alt="">
+      <h4>WHAT CAN JAVASCRIPT DO WITH THE
+        HTML DOM?</h4>
+      <p>
+        <ul>
+          <li>
+            <p>
+              With the object model, JavaScript gets all the power it needs to create dynamic HTML: <br>
+              – JavaScript can change all the HTML elements in the page <br>
+              – JavaScript can change all the HTML attributes in the page <br>
+              – JavaScript can change all the CSS styles in the page <br>
+              – JavaScript can remove existing HTML elements and attributes <br>
+              – JavaScript can add new HTML elements and attributes <br>
+              – JavaScript can react to all existing HTML events in the page <br>
+              – JavaScript can create new HTML events in the page <br>
+            </p>
+          </li>
+        </ul>
+      </p>
+        <br>
+      <h4>THE DOM PROGRAMMING INTERFACE</h4>
+      <ul>
+        <li>The HTML DOM can be accessed with JavaScript (and with other programming languages).</li>
+        <li>
+          <p>
+            In the DOM, all HTML elements are defined as objects. <br>
+            - A property is a value that you can get or set (like changing the content of an HTML element). <br>
+            – A method is an action you can do (like add or deleting an HTML element) <br>
+          </p>
+  <pre class="prettyprint  lang-java">
 
+    document.getElementById("demo").innerHTML = "Hello World!";
+  </pre>
+        </li>
+        <li>
+          In the example above, getElementById is a method, while innerHTML is a property
+        </li>
+      </ul>
+      <hr>
+      <h3>THE HTML DOM DOCUMENT OBJECT</h3>
+      <p>Finding HTML Elements</p>
+      <table class="table table-striped" style="width: 800px">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>document.getElementById(id)</td>
+            <td>Find an element by element id</td>
+          </tr>
+          <tr>
+            <td>document.getElementsByTagName(name)</td>
+            <td>Find elements by tag name</td>
+          </tr>
+          <tr>
+            <td>document.getElementsByClassName(name)</td>
+            <td>Find elements by class name</td>
+          </tr>
+          <tr>
+            <td>document.querySelector(selectors)</td>
+            <td>Find an element by css selector</td>
+          </tr>
+          <tr>
+            <td>document.querySelectorAll(selectors)</td>
+            <td>Find elements by css selector</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>CHANGING HTML ELEMENTS</p>
+      <table class="table table-striped" style="width: 800px">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>element.innerHTML = new html content</td>
+            <td>Change the inner HTML of an element</td>
+          </tr>
+          <tr>
+            <td>element.attribute = new value</td>
+            <td>Change the attribute value of an HTML element</td>
+          </tr>
+          <tr>
+            <td>element.setAttribute(attribute, value)</td>
+            <td>Change the attribute value of an HTML element</td>
+          </tr>
+          <tr>
+            <td>element.style.property = new style</td>
+            <td>Change the style of an HTML element</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>ADDING AND DELETING ELEMENTS</p>
+      <table class="table table-striped" style="width: 800px">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>document.createElement(element)</td>
+            <td>Create an HTML element</td>
+          </tr>
+          <tr>
+            <td>document.removeChild(element)</td>
+            <td>Remove an HTML element</td>
+          </tr>
+          <tr>
+            <td>document.appendChild(element)</td>
+            <td>Add an HTML element</td>
+          </tr>
+          <tr>
+            <td>document.replaceChild(element)</td>
+            <td>Replace an HTML element</td>
+          </tr>
+          <tr>
+            <td>document.write(text)</td>
+            <td>Write into the HTML output stream</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>

@@ -20,9 +20,9 @@
     <div style="margin-left: 50px; margin-top: 20px; padding-bottom: 100px; padding-right: 100px;">
       <h2>5. Array & Object</h2>
       <h3>Array</h3>
-    <pre class="prettyprint linenums lang-java">
-      let array_name = [item1, item2, ...];
-    </pre>
+<pre class="">
+    let array_name = [item1, item2, ...];
+</pre>
       <p>Example:</p>
 <pre class="prettyprint linenums lang-java">
   const cars = [
@@ -30,10 +30,86 @@
     "Volvo",
     "BMW"
   ];
+</pre>
+    <h3>Accessing Array Elements</h3>
+<pre class="">
+    array[index]
+</pre>
+    <p>Example:</p>
+<pre class="prettyprint linenums lang-java">
+  cars[1] // Saab
+  cars[2]  //Volvo
+  cars[3]  //BMW
+</pre>
+  <h3>Array Properties and Methods</h3>
+<pre class="prettyprint linenums lang-java">
+  cars.length   // Returns the number of elements
+  cars.sort()   // Sorts the array
+</pre>
+  <p>Example:</p>
+<pre class="prettyprint linenums lang-java">
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  let length = fruits.length;
 
-  console.log(cars[1]) // Saab
-  console.log(cars[2])  //Volvo
-  console.log(cars[3])  //BMW
+</pre>
+  <p>
+    <div id="result1"></div>
+  </p>
+  <button onclick="a_ex1()">CLICK to see the result</button>
+  <p><br>methods: <a href="https://www.w3schools.com/js/js_array_methods.asp">https://www.w3schools.com/js/js_array_methods.asp</a></p>
+  <hr>
+  <h3>Object</h3>
+  <table class="table table-striped" style="width: 800px">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Property Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>firstName</td>
+        <td>"โจนาธาน"</td>
+      </tr>
+      <tr>
+        <td>lastName</td>
+        <td>"โจสตาร์"</td>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>65070001</td>
+      </tr>
+      <tr>
+        <td>fullName</td>
+        <td>
+          function() {return this.firstName + " " + this.lastName;}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Example:</p>
+<pre class="prettyprint linenums lang-java">
+  const student = {
+    firstName:"โจนาธาน", 
+    lastName:"โจสตาร์", 
+    id:"65070001",
+    fullName: function() {
+      return this.firstName + " " + this.lastName;
+    },
+    course: ["Math","Eng","Com"]
+  };
+</pre>
+  <h3>Accessing Object Methods</h3>
+<pre>
+  objectName.methodName()
+</pre>
+  <p>Example:</p>
+<pre class="prettyprint linenums lang-java">
+  student.firstName // โจนาธาน
+  student.lastName // โจสตาร์
+  student.id // 65070001
+  student.fullName // [Function: fullName]
+  studnet.course // ["Math","Eng","Com"]
 </pre>
   </div>
 
@@ -42,7 +118,12 @@
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script>
+    function a_ex1(){
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      let length = fruits.length;
 
+      document.getElementById('result1').innerHTML = 'Total: ' + length.toString()
+    }
 </script>
 
 

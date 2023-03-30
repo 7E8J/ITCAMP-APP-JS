@@ -1,4 +1,4 @@
-const title = "1. Variable and data types"
+const title = "Exercise 1, Basic Javascript Type"
 const problems = [
     {
         title: 'EXERCISE 0',
